@@ -26,9 +26,27 @@ head : Provides general information and metadata about the HTML document (links,
 title : Determines the page title (in the tab), as well as gives titles of pages for search engines
 body : All of the content of the page goes in the body
 h1 : largest header for HTML
-
+div: A generic container (via MDN), a way of grouping things together (block level element)
+span : Another type of container, but is inline 
+img : a self closing image tag, indicate image source with src=""
+a : anchor tag, used for links. href="url" indicates where the anchor will take you when you click on it (anchors are inline elements)
+	->to make links explicitly use HTTP instead of the file system, http:// needs to be used (absolute path)
+	->this is not the same when accessing other pages on the same directory (relative path)
 
 
 Comments
 ========
 <!-- Comment --> : How to write an HTML comment, will not be read as actual content by the browser (Sublime allows you to select a line and CTRL+/ to comment it out)
+
+Lists
+=====
+ol : a list with numbers
+ul : list with bullet points
+li : list item, the contents of a list
+Tags can be nested inside the <li> as well, including other lists
+
+HTML Attributes
+===============
+Takes the form of a key-value pair, give properties to HTML elements
+Not all attributes work on all elements, some only work on one
+Example: <img src="image-source.extension"> (img is a self-closing tag)
