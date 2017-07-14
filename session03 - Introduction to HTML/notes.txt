@@ -1,0 +1,34 @@
+Basic HTML
+==========
+
+The general rule: <tagName> Content </tagName>
+Content is sandwiched between an opening and closing tags,
+and these tags dictate what element the content is used in.
+
+Structure
+=========
+Every page has to have a specific underlying structure. These nested tags are:
+
+<!DOCTYPE html>
+html
+	head
+		title
+	body
+html
+
+This indicates that the HTML uses HTML5 to the browser.
+This biolerplate has a keyboard shortcut in Sublime ("HTML /tab/")
+
+Tags
+====
+html : Represents the root of the HTML document, all other elements must be descendants of this element
+head : Provides general information and metadata about the HTML document (links, title, stylesheets, etc.)
+title : Determines the page title (in the tab), as well as gives titles of pages for search engines
+body : All of the content of the page goes in the body
+h1 : largest header for HTML
+
+
+
+Comments
+========
+<!-- Comment --> : How to write an HTML comment, will not be read as actual content by the browser (Sublime allows you to select a line and CTRL+/ to comment it out)
