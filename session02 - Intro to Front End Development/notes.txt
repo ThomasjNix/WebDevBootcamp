@@ -1,0 +1,25 @@
+Computer asks for a domains information, and the request is converted from a domain name to an IP via a DNS. The request is sent via a packet to the IP given, where a server may respond with data.
+
+FRONT END BASICS (Birds eye view)
+================
+
+Front end: What the user interacts with on a web page (directly or indirectly)
+Back end: Everything else, including the server, authentication, databases, etc.
+Common analogy: In a restaurant, the "front end" is being seated and served, where the back-end is everything you don't see, including the warehouse, delivery, in-kitchen cooking, etc.
+
+HTML
+----
+Hypertext markup language
+Defines the structure of the web page with elements, such as images, paragraphs, forms, tables, etc.
+
+CSS
+---
+Cascading Style Sheets
+Defines styles of a page, such as changing colors and margins/padding, defining position of elements, and importantly, define responsivity of a web page
+
+
+JS
+--
+JavaScript
+Adds logic to a web page, is actual functional programming
+Pretty open ended with what can be done. Examples are calculating values, handling user interation events, requesting data from a server, and much, much more
