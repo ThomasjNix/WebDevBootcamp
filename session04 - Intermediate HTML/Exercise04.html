@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title>Exercise04</title>
+</head>
+<body>
+	<h1>Register</h1>
+	<form>
+		<label>First Name: <input type="text" placeholder="John" required name="fname"></label>
+		<label>Last Name: <input type="text" placeholder="John" required name="lname"></label>
+		<br>
+		<label>Male <input type="radio" required><label>
+		<label>Female <input type="radio"><label>
+		<label>Other <input type="radio"><label>
+		<br>
+		<label>Email: <input type="email" placeholder="your email" required name="email"></label>		
+		<label>Password: <input type="password" placeholder="your password" required name="password"></label>
+		<br>
+		<label for="birthday-check">Birthday</label>
+		<select placeholder="Month" id="birthday-check" name="month">
+			<option selected disabled hidden>Month</option>
+			<option>Januray</option>
+			<option>February</option>
+			<option>March</option>
+			<option>April</option>
+			<option>May</option>
+			<option>June</option>
+			<option>July</option>
+			<option>August</option>
+			<option>September</option>
+			<option>October</option>
+			<option>November</option>
+			<option>December</option>
+		</select>
+		<select required name="day">
+			<option selected disabled hidden>Day</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+			<option>13</option>
+			<option>14</option>
+			<option>15</option>
+			<option>16</option>
+			<option>17</option>
+			<option>18</option>
+			<option>19</option>
+			<option>20</option>
+			<option>21</option>
+			<option>22</option>
+			<option>23</option>
+			<option>24</option>
+			<option>25</option>
+			<option>26</option>
+			<option>27</option>
+			<option>28</option>
+			<option>29</option>
+			<option>30</option>
+			<option>31</option>
+		</select>
+		<select required name="year">
+			<option selected disabled hidden>Year</option>
+			<option>1995</option>
+			<option>1996</option>
+			<option>1997</option>
+			<option>1998</option>
+			<option>1999</option>
+			<option>2000</option>
+			<!-- Let's pretend it goes on for a while -->
+		</select>
+		<br>
+		<label>I agree to the terms and conditions<input type="checkbox" required name="agreeToS"></label>
+		<br>
+		<button type="submit" required>Submit</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+Extended notes
+
+Intermediate HTML
+=================
+
+table element : <table>
+table : overall table
+	->tr : table row
+		-> td : table data
+th : table header
+
+thead : Not any difference in appearance of page, but more informative to screenreaders and such (as per HTML5 goals)
+tbody : Not any difference in appearance of page, but more informative to screenreaders and such (as per HTML5 goals)
+
+
+Forms
+=====
+
+form : overall form (block level)
+input : any type of user input (text field, radio button, check box, etc) (self-closing)
+label : text for a form field
+	-> Syntax 1: <label>Username: <input type="text"></label>
+	-> Syntax 2: <label for="username">Username: </label>
+				 <input id="username" type="text">
+
+action : attribute, the URL to send the form data to
+method : the type of HTTP request it is (POST, for example)
+type : indicates what type of input it is (checkbox, radio, text, email, password, submit, etc.)
+
+placeholder : Adds text to the textbox, it is temporary and is removed when the user alters the textbox
+name : attribute that holds the value of the input and stores it in the query string
+	-> ? and then key-value pairs seperated with ampersands
+		-> ?username=UserName123&password=Password123
+checkbox : checkable item that can be toggled on and off, multiple checkboxes can be checked
+radio button : similar to a checkbox but only allows one per group (type="radio") and cannot be unselected once selected
+dropdown : <select> and <option> tags used for dropdown lists, similar structure to lists
+	<select>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+	</select>
+	-> Provide name for form submission, it is the title of the key and the option selected is the value
+	-> value attribute on option can be used to substitute the option text with another string for the value of the key-value pair
+textarea : <textarea> tag used, can specify how large the text area is with row and column attributes.
+	->name needs to be given to send in query string
+
+Form Validations
+================
+
+Abiltiy to enforce rules or structure on a form
+	-> (ex: password must be at least 8 characters)
+
+required : attribute used for form validations. It is a boolean attribute, the fact that it's present makes it true
+	->This means that empty fields are not allowed
+For other types of validation, changing required is not needed. All that is needed is to change type to the appropriate type (ex: email, password, etc.)
+value : sets the value for radio buttons and check boxes for form submission
+
+IF A BUTTON IS THE LAST ELEMENT IN A FORM, IT WILL SUBMIT THE FORM.
