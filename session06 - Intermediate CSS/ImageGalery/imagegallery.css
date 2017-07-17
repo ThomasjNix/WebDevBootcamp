@@ -1,0 +1,17 @@
+body{
+	background-color: #f0f0f0;
+}
+img{
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+}
+
+h1{
+	font-family: Lemonada;
+	border-bottom: 2px solid #e1e1e9;
+	margin-left: 1.66%;
+	width: 30%;
+	font-weight: 800;
+	text-transform: uppercase;
+}
