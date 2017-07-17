@@ -1,0 +1,62 @@
+Intermediate CSS
+================
+
+Font and Font properties
+------------------------
+
+cssfontstack.com to see what support a font has across different systems
+
+
+font-family : Determines the font of text
+	=>font-family: "Arial", Verdana; 
+		->This has Arial as the text font, and Verdana if Arial isn't supported. The quotes aren't necessary unless the font begins with a non-alphabet character.
+font-size : determines how big the font is. 
+	-> Available values : px (pixels), em, rem
+		->em is a relative font size. An em is equal to the font-size of the family
+		->rem is the font size of the root element
+		->Typically a font-size is set at the body level so all top-level elements with em can have the same scale across browsers (default font size changes between browsers)
+font-weight : The weight of the font determines how thick the lines are
+	->bold, or some fonts will allow a numeric value in hundreds between 100-800
+line-height : controls the height of a given line, i.e how much space there is between lines
+	->line-height: 2; is double the default line height.
+text-align : Tells where the text is aligned within a given element (left, right, center)
+text-decoration : used to give an underline, overline, strikethrough, etc.
+
+
+Custom Fonts
+------------
+To include custom fonts in CSS, include them in the HTML file and reference them via the CSS property font-family.
+
+
+The Box Model
+-------------
+
+Box model - Controls positioning of elements, margins, and paddings on elements
+	-> Every element is represented with a rectangular box in the DOM
+
+	4 Parts of the Box:
+	=Content
+	=Padding
+	=Border
+	=Margin 
+
+	In the following order (outside to inside):
+	Margin
+		Border
+			Padding
+				Content
+
+	Box-model Properties:
+
+	Content:
+		width/height: determines the width/height of an element's content. Can be px, % (of the parent element), em/rem, vh, vw, etc.
+
+	Padding: 
+		The space between the border and the content, can be expressed with padding-left, padding-right, etc. or the shortcut padding: Top Right Bottom Left;
+		Can be set with same sizing options as width/height
+
+	Border: 
+		As stated previously, has width, color, and style properties
+
+	Margin:
+		Space outside of the border, or between elements. Can also set the size with the same properties as width/height
