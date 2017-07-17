@@ -1,0 +1,146 @@
+Intro to CSS
+============
+
+CSS = Cascading Style Sheets, files that style pages on web pages
+
+General pattern:
+	selector tag{
+		property: value;
+		anotherProperty: value;
+	}
+
+Inline CSS (Definitely not preffered):
+	style="property: value; anotherProperty: value;"
+
+Style Tag (Not preffered but better than inline):
+	<style type="text/css">
+		selector{
+			property: value;
+			anotherProperty: value;
+		}
+	</style>
+
+Style sheet (preferred):
+	(On stylesheet)
+
+	selector{
+		property: value;
+		anotherProperty: value;
+	}
+	anotherSelector{
+		property: value;
+		anotherProperty: value;
+	}
+
+	(in head tag of HTML file)
+
+	<link rel="stylesheet" type="text/css" href="link_to_stylesheet"> (self-closing)
+
+
+CSS Colors
+----------
+
+Hexadecimal (Base 16) : #NNNNNN where N is a hex value (0-9A-Fa-f) where #FFFFFF is white and #000000 is black
+	Example: #c0c0c0 is a dark shade of grey
+RGB : Red, green, blue in the syntax of rgb(R,G,B) where each R, G, B can be 0-255
+	For example, Bright green is rgb(0,255,0)
+RGBA : Same as RGB, but adds alpha property, which affects transparency. 1 = opaque, 0 = transparent. 
+	->Note: using RGBa values with A<1 will result in a color that is affected by any color that is behind it
+	->(for example, rgba(255,255,255,0.5) will look grey if there is a black background behind it.)
+
+Background and border
+---------------------
+Background : used to change the background color or image
+	-> for colors, any color specifier can be used (basic colors, hex, rgb, rgba)
+	-> or images, the value url('image-source.extension') is used.
+		-> Example: background: url('picture-of-dog.png');
+	=> background-repeat : property used to set how the background repeats (ex: norepeat)
+	=> background-size : sets the size of the background (ex: cover)
+
+Border: border around any HTML element. It has 3 parts:
+	-> width : tells how big the border is. To be visible, it must have width
+	-> color : Self explanatory, any color
+	-> style : tells the style of the border (for example, solid, dashed, etc.)
+	=>Example: border: 3px solid blue; (shortcut syntax, border-width, border-color, border-style can also be used)
+
+
+CSS Selectors (basic)
+---------------------
+Element selector : Specify the element tag type, CSS selects all elements that match that tag
+	-> Example: p {color: blue;} will set ALL p tags to have blue font color
+ID Selector : Set an ID tag on an element on a page, only one element per page can have that specific ID
+	=> Use the hash (#) to select the element. Example: #specificPTag{color: blue;} will turn ONLY the p tag with the id="specificPTag" attribute blue
+Class selector : CSS selects all elements that have the specific class="value" attribute. Multiple elements can have the same class value, unlike ID
+	-> the dot (.) selector is used to select by class
+	Example: 
+		=> <p class="example">Value P</p>
+		=> <span class="example">Value Span</span>
+		=> <h1 class="example">Value H1</h1>
+
+		(css)
+		.example{
+			color: blue;
+		}
+		=> This will turn each of these elements blue, but will not affect any other elements without the class="example" tag
+
+
+CSS Selectors (advanced(?))
+---------------------------
+
+Star selector : * selects every element on the page
+	-> Not actually used very frequently for obvious reasons
+Descendent selector : Selects all <tag> elements that are direct descendents of <tag2> element
+	=> example tag2 > tag will select only the tag elements that are direct descendents of tag
+	=> example 2: tag3 > tag2 > tag will select only the tag elements that are direct descendents of tag2 elements that are direct descendents of tag3 elements
+		tag3
+			tag2
+				tag (Selected!)
+			tag5
+				tag
+		tag4
+			tag2
+				tag
+			tag5
+				tag
+		tag3
+			tag2
+				tag (Selected!)
+			tag5
+				tag
+Adjacent selector : Allows you to select elements that are adjacent to / next to / on the same level / siblings of other elements (tag1 + tag2 selects all tag2 that fit)
+	=> example: div + h2 
+	div
+		ul
+		div
+			ul
+			h2
+		h2 (Selected!)
+	h2 (Selected!)
+	div
+	h3
+Attribute selector : Selects elements based on a specific attribute provided
+	example: a[href='specific link'] will only select a tags with the specific link provided as the value for the href attribute
+nth-of-type: selects every nth element provided
+	example: p:nth-of-type(3)
+		p
+		p
+		span
+		p (Selected!)
+		p
+		div
+		p
+		p (Selected!)
+		p
+
+
+Inheritance and Specificity
+---------------------------
+
+Inheritance : CSS inheritance determines what properties child elements have based off the styles of the parent element
+Specificity : The more specific the selector, the higher priority it's CSS properties has. If there are multiple selectors for the same element, the higher priority takes the lead.
+	In general, from least to most specific (via MDN):
+		->Universal selectors (*)
+		->Type selectors / Tag selectors / pseudo-elements (h1, :before, etc.)
+		->Class, attribute, and psuedo-class selectores (.className, [type="checkbox"], :hover, etc.)
+		->ID selectors (#IDName)
+	specificity.keegan.st is useful for determining specificity of a selector
