@@ -1,0 +1,69 @@
+Introduction to JavaScript
+==========================
+
+JavaScript Primitives
+---------------------
+
+A primitive data type is certain category of data, and every language has some ability to differentiate between these. In JavaScript, there are 5 basic types of data:
+
+1. Numbers
+	All numeric data, including decimals, negative numbers, complex numbers, etc. (Ex: 42, 100.5, E5x10, etc.)
+2. Strings
+	Text that is represented as characters. Important: Must be inside of quotes! Numeric data can be a string too, if it's wrapped in quotes. (Ex: 'Hello world', '42', etc.)
+3. Boolean
+	Strictly true or false values. Designated by true or false, which appear to be text but are specific language keywords.
+4. Null and Undefined
+	"Empty" data types, they are very similar but Null should be user-set and undefined should be system set. These are values, there's no multiple types of each. 
+
+Numbers
+-------
+	Numbers can have simple mathematic operations done on them.
+		+ and -, * and /, % (modulus, finds the remainder of division)
+			-> Follows order of operations, PEMDAS
+
+Strings
+-------
+	Single or double quotes are acceptable, they function the same. Purely stylistic choice. 
+	Concatenation: Merging two strings together at an intersection. The + operator is used here. "I like " + "dogs." = "I like dogs."
+	Escape characters: When you need to use a quote symbol insite of a string, the escape symbol \ must be used prior to signify it's not actually the end of the string
+		-> Ex: "He said \'That was a cool dog\'" = He said 'That was a cool dog'
+		-> To actually put a backslash in a string, use a double backslash (\\)
+	Length property: Strings have the property length (or rather the String object, explained in more detail later), tells how many characters there are in the string
+		-> Ex: "This string has 29 characters".length = 29 
+	You can access specific characters using the bracket ([]) operators and giving a numeric index. Indexes are 0 based, they start at 0
+		-> Ex: "This string has 29 characters"[5] = "s"
+
+Variables
+---------
+	Variables are specially designated placeholders that we can store data in for use later. 
+	Varaibles in JavaScript are designated with the keyword var. 
+	They can be assigned a value at initialization (var x = 42;) or later on (var x; x=42;)
+	Important note: variables are not the data themselves, they simply hold the data and can be used in place of the data
+		->The JavaScript engine is able to tell what values these variables hold, but variables themselves are not primitive data types.
+	Variables can be updated (overwritten) at any point in the code. 
+	They can store any primitive value type, or even some more complex ones. 
+	The value is retrieved by calling the value. 
+		-> var a = "dogs."
+		-> console.log("I like " + a) // "I like dogs."
+	JavaScript variables should use camel casing (thisIsCamelCasing)
+
+Null and Undefined
+------------------
+	Undefined: When a variable is declared but not given a value, the variable is set to the value of undefined. 
+		->The undefined value is overwritten when a value is given to the variable.
+	Null: Null is explicitly an "empty value". Whereas undefined literally means "this variable hasn't been defined",
+		Null means that the variable is empty and has no value. Technically a variable can be set to undefined, but this is bad practice.
+		If you intend to set a variable to have an empty value / no value post-definition, it should always be set to null.
+
+Built-in Methods
+----------------
+	JavaScript has many built in methods, far too many to actually cover and take notes on, but here are a few useful ones.
+	Methods are called by the parenthetical operators () after the name of the function
+		-> Inside the parenthesis you enter parameters, basically additional information the function can use to function as intended
+	alert() : This pops up a window in the browser with the value given inside the alert parameters as the message
+	prompt() : Similar to prompt, but allows the user to enter a value, which is returned (useful for getting user input)
+	console.log() : Logs whatever you put inside the parenthesis to the console
+
+	Ex: alert("Hey how are you?");
+		-> Result : popup window that says "Hey how are you?"
+
