@@ -1,0 +1,65 @@
+JavaScript - Control Flow
+=========================
+
+Boolean logic
+-------------
+You can do logic on boolean values that determine the outcome of the operations. 
+	This logic is made up of statements that evaluate to true or false
+
+Comparison operators:
+	>, <, >=, <= (greater than, less than, greater than or equal to, less than or equal to) - Self explanatory
+	== (values, allows for implicit coercion)
+	!= (not equal to, allows for implicit coercion)
+	=== (equivalent values, does not allow for implicit coercion)
+	!== (not equal to, does not allow for implicit coercion)
+		=> Implicit coercion is when the JavaScript tries to make two values of different types into the same type.
+		=> Explicit coercion would be something like Number("42") to convert "42" to 42.
+		=> Ex: 42 == "42" //true
+			=>JavaScript engine coerces "42" into numeric value. 42 = 42
+		=> 42 === "42"
+			=>JavaScript engine does not coerce "42", so they are not equal
+	Interesting side note: NaN is "not a number", it's a special JS value that every instance of it is different, and it's never equal to itself.
+		=> NaN === NaN // false 
+			Because of this, we can check if something is NaN by the conditional (var1 !== var1)
+				=> If this is true, we know it's NaN because ONLY NaN has a true value
+
+Logical Operators
+-----------------
+&& : AND  (if both values are true, the result is true. Otherwise, it is false)
+|| : OR (if either / both value(s) is true, the result is true. If both results are false, the result is false)
+! : NOT (!true = false, !false = true)
+	=>Example: true && true //true, true && false //false
+	=>Example: true || true //true, true || false //true, false || false //false
+	=>example !true //false, !true //false
+
+(Exercises excluded due to logical simplicity and above explanation)
+
+All values have inherent "truthiness" or "falsiness". 
+	Falsy values: null, undefined, 0, NaN, empty string ("")
+	Everything else is truthy
+
+Conditionals
+------------
+Conditionals are the biggest part of any programming language, as they allow you to add conditions to your code, which allows for decision making. 
+
+If 
+	If takes a boolean value, and if it is true, it will execute the code inside its block 
+		ex: if (true){
+				alert("Hello");
+			} // Alerts hello
+Else If (optional)
+	Else if executes the same way as the if statement, but only if the value it is given is true and the value of the original if statement is false
+		ex: if (false){
+				alert("Hello");
+			} else if (true) {
+				alert("goodbye");
+			}// Alerts goodbye
+Else (optional)
+	Else is a catchall that will execute if the If statement and any following else if statements don't execute
+	ex: if (1 > 2){
+				alert("Hello");
+			} else if (2 > 3) {
+				alert("goodbye");
+			} else {
+				alert("You made it");
+			} // alerts "You made it"
