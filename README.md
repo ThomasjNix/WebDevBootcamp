@@ -9,3 +9,15 @@ Anyway, this repo will serve as a reference for me, and as a way to show what I 
 The plan is to learn with this bootcamp for 2-3 hours per day, about twice the length of a typical college course, so I look forward to seeing how much I can advance!</p>
 
 <h3>Happy coding!</h3>
+
+<hr>
+<h2><strong>Update:</strong></h2>
+<br>
+<p>At this time I have finished the HTML and CSS sections of the web development bootcamp on Udemy. As previously stated, I did know a lot of this already. However, there were a few things I learned, and I feel that goes to show why it's good to review new sources, even if you are comfortable with the content. Although my HTML and CSS knowledge has not dramatically improved, I am satisfied that I picked up a couple new trick.</p>
+
+<p><em>About the upcoming sections</em>: The upcoming sections are focused on JavaScript, and will likely not contain much content that will be placed into web documents. As such, most of this content will be in the form of notes. It is worth noting also that I have recently finished another Udemy course, <em>JavaScript: Understanding the Weird Parts</em> by Anthony Alicea, a wonderful video series. Nevertheless, I will be taking in depth notes on this course (my notes for Anthony Alicea's course are written on paper), because no amount of review is <em>bad</em> review.</p>
+<br>
+
+<span>I look forward to this next section and submitting what I learn!</span>
+<br>
+<h3>Happy coding!</h3>
