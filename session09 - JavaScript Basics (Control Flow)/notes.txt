@@ -64,10 +64,19 @@ Else (optional)
 				alert("You made it");
 			} // alerts "You made it"
 
-Loops
+Loops (While and For)
 -----
 
 Loops are intended to write DRY code (Don't Repeat Yourself!). Loops allow you to "dry up" your code by iterating through a set or until a condition is met. 
 
 While loop : follows syntax while(condition){}, and while the condition is true, it will continue to run the code specified as long as the condition given is true.
 	=> ex while(x < 5){ console.log(x); x++;} // 1 2 3 4 5, assuming x was defined as 1 beforehand
+
+For loop : Follows the syntax for(initialize a variable; condition; step procedure){ //execute code}
+	initialize: you create a variable with a certain value for the loop to use
+	condition: a boolean condition for the loop to check against
+	step procedure: what the loop does every iteration 
+
+	Ex: for (var i = 0; i < 3; i++){
+		console.log(i);
+	} // 0 1 2 3
