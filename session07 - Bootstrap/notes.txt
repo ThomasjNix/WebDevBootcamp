@@ -1,0 +1,131 @@
+Bootstrap
+=========
+
+
+Bootstrap is a CSS framework that utilizes HTML, CSS, and JS in order to create a way of making clean looking, simple, mobile responsive web pages.
+
+www.http://getbootstrap.com/
+
+Buttons
+-------
+
+buttons : use .btn class followed by a type of button
+	.btn-default, .btn-primary, .btn-info, etc. All are styled slightly differently.
+	can have properties like disabled, which grey out the button and keep it from being clicked
+	.btn-xs, .btn-sm, etc. will affect the button size
+
+
+Jumbotrons, Forms, and Inputs
+-----------------------------
+
+Jumbotron - a flexible component that can show key content in the page in a focused area.
+	.jumbotron on a div to create it
+	jumbotron is set up to take up 100% of the container it's inside of. (with compliments of the grid system, this can be very useful)
+
+	using div with class="container", it gives the div some spacing/padding and centers it. This can be used if the grid system isn't in use.
+
+
+Forms
+-----
+Bootstrap has many options for styling forms to be sleek and responsive. Here are some of the key reasons to use bootstrap forms
+
+div class="form-group"
+	This is used for optimum spacing, as noted by Bootstrap documentation.
+	Used properly with input and label
+		input needs to have the class form-control. This is used to properly style the input appearance and spacing and focusing affects. 
+		lable does not need any bootstrap classes, just labels as they are used.
+
+form-inline can be placed on the form tag to make the form sit entirely on a single line (good for simple forms)
+
+
+Navbars
+-------
+
+Navbars must start with <nav> elements with 2 (1?) classes: 
+	navbar
+	navbar-defualt (or one of the other themes)
+
+	<nav class="navbar navbar-default"></navbar>
+
+Brand / Brand image: an anchor tag, needs to be inside a navbar-header
+	<nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<a href="wherever-the-link-takes-you" class="navbar-brand">Brand Content</a>
+		</div>
+	</navbar>	
+
+Links : li tag, sits inside of a ul that hold all the navbar content on one side
+	(defaults to left side, to make the navbar contents right aligned, used navbar-right)
+		->this will sit right against the right edge, a container can be added inside the navbar (surrounding everything else) to address this.
+			->if container wraps around the ENTIRE navbar (including <nav>), the navbar will be limited to the .container size and be centered
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="wherever-the-link-takes-you" class="navbar-brand">Brand Content</a>
+			</div>
+			<ul class="navbar navbar-nav">
+				<li><a href="a link">Content</a></li>
+				<li><a href="another link">Content #2</a></li>
+			</ul>
+			<ul class="navbar navbar-nav navbar-right">
+				<li><a href="a link">Right side content 1</a></li>
+				<li><a href="another link">Right side content 2</a></li>
+			</ul>
+		</div>
+	</navbar>
+
+***For responsive elements to work, such as the hamburger menus and dropdowns, the bootstrap JS file needs to be included along with the bootstrap.css file.***
+	->To use the bootstrap JS file, jQuery MUST be used.
+
+Mobile resizing: <div class="collapse navbar-collapse"> will make anything inside this div collapse to a hamburger menu any time that we enter a mobile size
+
+Hamburger button: a button with type=button, class=navbar-toggle and collapsed, data-toggle=collapse, and data-target=#the ID of the div you want to collapse (previous line)
+	->Set aria-expanded to false for screen readers
+	the hamburger button is made up of 3 spans that have the class icon-bar 
+
+
+
+
+Bootstrap Grid System
+=====================
+
+
+The bootstrap grid system is used to make responsive and appropriately sized page elements that can change their screen positioning, size, and layout based on the size of the screen
+	-> this is called responsive design
+
+bootstrap uses a system called a grid system because it is made up of rows and a total of 12 columns, taking up 100% of the page width.
+Elements can be given classes that signify their spacing on the page (for example, col-lg-12 would tell an element to take up 100% of the page width on large devices).
+	->Elements can be given multiple classes for different sizes so that they may take up X amount of screen space at one screen size, but Y amount of screen space at another size.
+
+About grid
+----------
+Bootstrap grip HAS to be inside a div with class container
+	->Inside of this, we need a div with class row
+		-> inside of each row (there can be as many as you like), you can specify elements to have certain column sizes
+
+		Example:
+
+		div class=container
+			div class=row
+				div class=col-lg-6 col-sm-8
+				div class=col-lg-6 col-sm-4
+
+		In this example, the first inner div and second one would be the same size on large screens, but on smaller screens the first would be twice as large (67% / 37%)
+
+		Any larger sizes not specified will fall back to any previously mentioned smaller sizes
+			Ex: col-sm-3 col-lg-6 will have a size of 3 units per element on medium (col-md) because md is not set but sm is.
+
+		Nesting Grids
+		-------------
+			Rows can be made inside of other rows, so that a single row can have multiple styles. This will be multiplicatively fractioned. 
+			Note: You can't have a column inside of a column, there must be a seperating row.
+				Ex: 
+					row
+						col-md-4
+							row
+								col-md-6	//These two will not be half the screen, but rather 1/2 of 1/3 of the screen, as the grandparent column is 1/3 of the screen.
+								col-md-6 	//So, each of these will be 1/6 of the screen.
+						col-md-4
+						col-md-4
+						
