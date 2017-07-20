@@ -53,3 +53,59 @@ Function Declaration: A function declaration is a definition of a function as we
 
 	Function declarations are also hoisted (more on that later), so at run time, function declarations will have a value (the function) and function expressions will be 
 	undefined until the JavaScript engine reads and processes what the variable is being set equal to.
+
+
+Scope
+-----
+
+Scope is the context where any given code is being execuded in. There are multiple levels of scope, and scope can be nested.
+Scope is one of the most important aspects about how JavaScript operates. 
+
+	function doThing(){
+		var y = 20;
+		console.log(y); // 20
+	};
+
+	console.log(y); // Error: y is not defined, because y is defined inside the scope of the function doThing, and is not visible outside of that scope
+
+However, the inverse is true for nesting the other way around.
+
+	var y = 100;
+
+	function doThing(){
+		console.log(y); // 100, because the function is accessing a variable on a scope surrounding itself.
+	};
+
+Parent scopes can not access child scopes, but child scopes can access parent scopes.
+
+	var y = 100;
+
+	function doThing(){
+	var y = 20;
+		console.log(y); // 20, 
+	};
+
+	console.log(y); // 100
+Notice how above the y value stays the same outside of the function. That's because y is declared again at the scope of the function, that is a NEW varaible is created, but because the parent scope
+doesn't have access to that variable, the variable y in the parent scope is not affected. This is not the case with the below example however. 
+
+	var y = 100;
+
+	function doThing(){
+	y = 20;
+		console.log(y); // 20, 
+	};
+
+	console.log(y); // 20
+
+This is because y is not being created again at the function level, but the value is simply being changed. Since the child scope DOES have access to the parent scope, it "reaches up" to get and set the value of y. That is why when we log y again at the end, the value has changed.
+
+Two scopes on the same level also can not access each others variables, they are scope-specific. 
+
+function one(){
+	var x = 1; 
+}
+
+function two(){
+	console.log(x); // Error
+}
