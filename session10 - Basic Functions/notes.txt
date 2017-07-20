@@ -1,0 +1,55 @@
+JavaScript and Functions
+------------------------
+
+Functions are reusable pieces of code. They must be defined and given a value, and then when they are called later, the function code will run. 
+	convention is to use camel casing
+
+Synax: 
+function doSomething(){
+	//code
+}; //Code is declared. Without parenthesis, it is just the function definition, and will not run. () makes the code run. 
+
+doSomething(); //code runs
+
+Arguments
+---------
+
+Arguments are pieces of data that can be passed to functions in order for them to operate with. 
+	Ex: function doSomething(argument){
+		console.log(argument);
+	};
+
+	doSomething("Hello!"); //"Hello!"
+	=> Functions can have multiple arguments, any extra arguments will be ignored and any missing arguments will be set to undefined (this excludes some uses of the arguments keyword)
+
+The Return Keyword
+------------------
+
+The return keyword allows a function to send a value back after it is completed. Functions don't HAVE to return anything explicitly, they will return undefined if a return isn't specified, but the ability to take data, process it, and give back a value
+is what makes functions very powerful. 
+	=>As soon as the return statement is used, execution of the function is stopped.
+
+Ex: 
+	function multiplyByTwo(num){
+		return num*2;
+	};
+
+	multiplyByTwo(5); // 10
+
+Function Declaration vs Function Expression
+-------------------------------------------
+
+Function Declaration: A function declaration is a definition of a function as we've seen, 
+	function funcName(){ //code }; <-- Notice the semicolon!
+
+	whereas a function expression is a function that is set equal to a variable name.
+
+	var funcName = function(){ //code }  <-- Notice no semicolon!
+
+	What's the difference?
+
+	Function expressions can be changed, for example if funcName = 10; was used, the function would be lost.
+	Function declarations don't have this as an issue (or perk, depending on how it's used).
+
+	Function declarations are also hoisted (more on that later), so at run time, function declarations will have a value (the function) and function expressions will be 
+	undefined until the JavaScript engine reads and processes what the variable is being set equal to.
