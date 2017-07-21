@@ -1,0 +1,121 @@
+JavaScript Arrays
+=================
+
+Arrays are lists of related data that can be stored in a single varaible. They can hold any type of data, and even multiple types of data within a single array. They also have a length property,
+which tells how many elements the array has. 
+
+example: 
+	var friend1 = "f1";
+	var friend2 = "f2";
+	var friend3 = "f3";
+	var friend4 = "f4";
+	
+	=> Not very DRY! Let's use an array.
+
+	var friendArray = ["f1","f2","f3","f4"];
+
+	=> Very DRY!
+
+Each element in an array can be retrieved by the use of arrayName[elementIndex], where elementIndex is a 0 based numerical index.
+
+For example,
+	
+	friendArray[0]; // "f1"
+	friendArray[1]; // "f2"
+	friendArray[2]; // "f3"
+	friendArray[3]; // "f3"
+
+You can use array indexes to change array element values as well.
+
+	friendArray[0] = "No longer friends";
+	friendArray[0]; // "No longer friends"
+
+You can add data to an array by either pushing or simply adding to an index that doesn't already exist. 
+	
+	friendArray.push("New friend");
+	friendArray[4]; // "New friend"
+
+	friendArray[5] = "Another new friend";
+	friendArray[5]; // "Another new friend"
+
+	=>WARNING: If your array has 5 elements and you just add to arrayName[10], be aware that the unused indexes (5, 6, 7, 8) will be undefined!
+
+
+Array Methods
+-------------
+
+Arrays have many built in methods, here are 6 very useful ones. 
+
+push/pop
+	Array.push adds an element to the end of an array
+	Array.pop removes an element from the end of an array, and returns the element that was popped
+
+	arr = [1,2,3];
+	arr.push(4); // [1,2,3,4]
+	var popped = arr.pop(); // arr = [1,2,3]
+	popped; // 4
+
+shift/unshift
+	Array.shift removes the first item in an array, and returns the color that was removed (think of it as shifting to the left, and the element at index 0 is taken off)
+	Array.unshift adds an item to the beginning of an array (think of it as shifting to the right, and the new empty element at index 0 is assigned)
+
+	arr = [1,2,3];
+	var shifted = arr.shift(); // arr = [2,3]
+	shifted; // 1
+	arr.unshift(100); // arr = 100,2,3
+
+IndexOf
+	Array.indexOf finds an item in the array and returns the index. If there a multiple elements fitting the indexOf parameter, it returns the first occorence. If the parameter is not found,
+	indexOf returns -1.
+
+	var colArr = ["red", "orange", "green", "orange"];
+	colorArr.indexOf("green"); // 2
+	colorArr.indexOf("orange"); // 1
+	colorArr.indexOf("blue"); // -1
+
+Slice
+	Array.slice is used to copy different portions an array. It can copy parts, or all. It takes two arguments, the first is the starting index (where the cut begins), and the second is the ending index (where the cut should end). This does not alter the original array. slice() called with no arguments will copy the entire array. 
+		=>Note: the stop index is NOT included in the slice. If you want the 3rd index, stop at 4.
+
+	var arr = [1,2,"a","b", 3];
+	var letters = arr.slice(2,4);
+	letters; // ["a","b"]
+	var copyArr = arr.slice();
+	copyArr; // [1,2,"a","b", 3]
+
+Multidimensional arrays
+	Arrayss can have arrays nested inside them, called multidimensional array. They are referenced with arrName[outerArrIndex][outerArrIndex].
+
+	Ex:
+		arr2D = [
+			[1,2,3],
+			[4,5,6],
+			[7,8,9]
+		];
+
+		arr[2][0]; // 7																																																										
+
+Array Iteration
+---------------
+
+The idea is that you can store things in an array, but more importantly, you can iterate over an array. It is a list after all, and it's useful for storing and operating on multiple pieces of data. 
+
+For loop : Follows the syntax (declare variable; set loop condition; set step condition;), and with arrays it's common for the loop condition to be <variable declared> < arrName.length
+	Ex:
+		for (var i = 0; i < arbitraryArrayName.length; i++){
+			doSomethingWith(arbitraryArrayName[i]); // Operates on every array index
+		}
+
+forEach : a built in javascript method useful for iterating over arrays, follows the syntax arbitraryArrayName.forEach(anonymous function(designatedElementName){ //code });
+	ex:
+		var colors = ["red", "blue", "green"];
+		colors.forEach(function(color){
+			console.log(color);
+		});
+
+		// "red"
+		// "blue"
+		// "green"
+
+The difference : They are essentially the same. This is not the same as the for..in loop for important and complicated reasons, that will likely be covered in the Objects session of this video series.
+	=> Occasionally when working with some things that appear to be arrays but are not actually arrays, forEach isn't a function, so a standard for loop works in place of it.
