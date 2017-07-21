@@ -119,3 +119,35 @@ forEach : a built in javascript method useful for iterating over arrays, follows
 
 The difference : They are essentially the same. This is not the same as the for..in loop for important and complicated reasons, that will likely be covered in the Objects session of this video series.
 	=> Occasionally when working with some things that appear to be arrays but are not actually arrays, forEach isn't a function, so a standard for loop works in place of it.
+
+	From the TA: 
+
+		"forEach takes a callback function, that callback function is expected to have at least 1, but up to 3 arguments. This is how .forEach was designed
+
+		The arguments are in a specific order:
+		- The first one represents each element in the array (per loop iteration) that .forEach was called on.
+		- The second represents the index of said element.
+		- The third represents the array that .forEach was called on (it will be the same for every iteration of the loop)."
+
+	Ex:
+
+		var randoArray = [1,2,3];
+
+		randoArray.forEach(function(elem,index,arr){
+			console.log("array: " + arr + 
+				"\nindex: " + index + 
+				"\nelem: " + elem);
+		});
+
+		Results: 
+			array: 1,2,3
+			index: 0
+			elem: 1
+			array: 1,2,3
+			index: 1
+			elem: 2
+			array: 1,2,3
+			index: 2
+			elem: 3
+
+		You can also pass in an already defined function that takes elem, index, and the array as arguments (in that order), just don't invoke it with ()!
