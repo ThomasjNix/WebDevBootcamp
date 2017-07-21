@@ -1,0 +1,106 @@
+JavaScript Objects
+==================
+
+Objects are a way of grouping sets of properties and functions together into a related, well, object. Objects are a huge part of object oriented programming (duh) but especially in JavaScript, since everything in JavaScript is either an object or a primitive of some type.
+
+Imaging if you had the following:
+
+	travisArray = [travis, 32, ecommerce] // pseudocode array
+	danielArray = [daniel, 22, computer science] //
+	... etc
+
+	To get information about each person, you would have to do something like name = travisArray[0], etc. 
+		1. This is not DRY
+		2. This is not meaningful code
+
+	A better way is to use objects.
+
+	var travis = {
+		name: Travis,
+		age: 32,
+		profession: ecommerce
+	}
+
+	Unlike arrays, Objects have no particular order, only a pool of properties and functions that are attached to them. 
+	Like arrays however, they can hold any type of data.
+
+	This way to get information, we can see that travis.name is both DRY (we don't need to create meaningful variables) and meaningful in and of itself. 
+		=> Instead of dot notation, bracket notation works the exact same way. For example, travis["name"] is the same as travis.name
+			=> bracket notation is useful if you have properties that do not fit naming requirements for variables (for example, beginning with a number or containing spaces. This is not recommended, however)
+			=> bracket notation also doesn't evaluate variable properties. ex:
+				var str = "name";
+				person.str // person doesn't have str property
+				person[str] // returns person.name value, because str is evaluated to "name"
+
+	There are 3 ways to assign values to an object
+	
+	Object property assignment
+	var person = {};
+	person.name = ...;
+	person.age = ...;
+
+	Object literal notation
+	var person = {
+		person: ...,
+		age: ...
+	};
+
+	Constructor notation
+	var person = new Object();
+	person.name = ...;
+	person.age = ...;
+
+
+	Object vs Array syntax (even though Arrays ARE a type of object... but the course isn't there yet :P)
+
+	Arrays are lists, and as such they are index bound from 0 to length-1
+	Objects are not lists, they are key-value pairs. It is more like a dictionary, where the 
+		property name is the key and the value is the... well, value.
+
+	Object nested arrays and array nested objects
+		You can have element of an array that are objects and properties of an object that are arrays.
+
+		Objects in an array:
+
+			var person 1 = { //properties, functions, etc.};
+			var person 2 = { //properties, functions, etc.};
+			var person 3 = { //properties, functions, etc.};
+			var groupOfPeople = [person1, person2, person3];
+
+			person1.greet(person2);
+			person2.respond(person1, person2.someRandomProperty); 
+
+		Arrays in an object:
+
+			var person1 = {
+				name: "person",
+				favoriteFoods : ["Pizza", "Sushi", "Grizzly Bear"]
+			};
+
+			person1.favoriteFoods[2]; // "Grizzly Bear"
+
+	Adding methods to objects
+		Objects can have any data type as a property, and that includes functions. 
+
+		var person = {
+			name: "Frank",
+			age: "37",
+			greeting: function(name){
+				console.log("What's it to ya, " + name + "?");
+			}
+		}
+
+		var yourName = prompt("What's your name?");
+		console.log(person.name + " says:");
+		person1.greeting(yourName);
+
+		// "Frank says:"
+		// "What's it to ya,  <yourName>?"
+
+		You can also add functions to an object by just doing 
+			objectName.functionName = function(arguments){ // code };
+
+		This is useful because you can have a function with an identifying name that is the same as a global function without 
+		overwriting the global functions (or any higher scoped functions) code. If you define a function that is already defined, it will 
+		be overwritten, however if you define a function inside an object, it will not affect any higher level scope functions, as it has its own
+		private scope. 
