@@ -1,0 +1,59 @@
+DOM Manipulation
+================
+
+//Define what the DOM is
+	DOM is the Document Object Model. It is the interfact between JavaScript and the HTML+CSS on the page. 
+
+	HTML-
+		|-- DOM -- JS
+	CSS--
+
+	Everything stored inside of the document object is part of the DOM. That means ALL the HTML on the page in the document is the entirety of the DOM.
+
+	console.dir(document) will print the ENTIRE document object in JS object syntax
+
+//Understand why DOM Manipulation is awesome
+	DOM manipulation is the most important part of interactive web browsing, as it allows functional code to apply to web page elements. This means that a user can actually interact with elements and they can respond conditionally, and that's the essence of every type of application, whether it's games, social media, etc.
+
+//Understand the SELECT, then MANIPULATE workflow
+
+	SELECT and element and then MANIPULATE it. This is the workflow. You use JS to get an elements information, and then you use JS to manipulate that element on the page. 
+
+	For example
+		Assume there is an h1 that is standard as they come, and you want to give the H1 pink text and a blue background (for some aweful reason)
+		1. Select the H1
+		2. Manipulate the text color and make it pink
+		3. Manipulate the backgorund color and make it blue 
+
+		(select H1 element and set var h1 equal to it);
+		h1.style.color = pink;
+		h1.style.background = blue;
+
+
+
+
+***DOM Selection***
+-------------------
+
+Some less important but still neat selectors:
+	document.URL // returns the URL
+	document.link // list of all the links on the page
+	document.body // the entire body of the page
+	document.head // the head section of the page
+
+But... all the selectors used for DOM manipulation are build in to the document.
+
+
+document.getElementById()
+	Selects an element that has the particular ID provided. Since only one element per page can have a specific ID, this returns a single element.
+document.getElementsByClassName()
+	Similar to the first one, however since a calss can occur as many times on a page as you'd like, this will return a list of all the elements on the page that have the specified class name. (Not an array, but a list. It's similar to an array, but it's not exactly a JS object, so it won't have JS Array methods and properties necesarrily)
+document.getElementsByTagName()
+	Very similar to the previous one, but selects by tag name instead of class. So you would use li or h1 or div instead of the class.
+document.querySelector()
+	A newer method that simplifies selection. This returns the first element that selects a CSS Style selector (#idName, .someClass, div#idName.someClass, etc.)
+		document.querySelector('#idName');
+document.querySelectorAll()
+	The same as querySelector(), but returns ALL elements that fit.
+
+	=> Only querySelector and querySelectorAll need the CSS markup for selection, like # and ., the others would be .getElementById("idName") or .getElementsByClassName('someClassName')
