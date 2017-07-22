@@ -1,0 +1,14 @@
+The goal an processes of this game:
+
+Load the page and get 6 different colors
+One of the colors is listed in the header
+The goal is to pick which color the header matches
+A "new colors" button is available that scrambles new colors
+	If a guess is wrong, the color disappears and a message shows saying "Try again"
+	If a guess is correct, 3 things happen
+		All 6 squares reappear with the same color
+		A message appears saying "Correct!"
+		The color of the header background changes to the correct color
+		"New Colors" changes to "Play again?"
+There should be an easy and hard mode
+The site should be responsive
