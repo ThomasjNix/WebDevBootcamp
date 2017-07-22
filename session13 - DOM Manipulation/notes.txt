@@ -57,3 +57,68 @@ document.querySelectorAll()
 	The same as querySelector(), but returns ALL elements that fit.
 
 	=> Only querySelector and querySelectorAll need the CSS markup for selection, like # and ., the others would be .getElementById("idName") or .getElementsByClassName('someClassName')
+
+DOM Manipulation
+----------------
+
+There are many ways to manipulate elements, here are a few common ones:
+
+	Changing an element style
+		When the DOM is constructed, a property called style is added to each element. It's a huge element and has a property for every possible CSS property.
+			You use <element you selected>.style.<CSS property you want to change> = "<style property you want to set, MUST BE A STRING!>";
+				=> document.getElementById('someH1Element').style.color = "blue";
+			=> If you are changing a lot of properties, there is a better way. Changing 5 styles isn't DRY, and it doesn't follow the seperation of concerns
+				=> Seperation of concerns : JS, CSS, HTML are responsible for their respective domains, and we want to limit the overlap that each has over another's domain. Don't write CSS with your javascript, and don't use your HTML file as a script page, etc.
+				=> If you're changing a ton of elements on an element, just create a class in your CSS file and add it with JS when needed.
+
+
+	Adding / Removing classes
+		1. Create a class
+			.className{
+				property: value;
+				property: value;
+				property: value;
+			}
+		2. Select the element
+			var someElement = document.getElementByID('someId');
+		3. Add the class
+			someElement.classList.add('className');
+
+			=> Now someElement has the class className, and all styles assigned with it!
+
+			Other classList uses:
+
+			classList.remove // removes a class from an element
+
+			classList.toggle // removes the class if the element has it, adds it if it doesn't.
+
+		=> classList is technically not an array, so .push will not work. It has it's own .add function, use it.
+
+
+	Changing the content of a tag
+
+		Sometimes you don't want to change an element itself, but rather the content inside of it. There's .textContent
+			=> Be aware, .textContent will get rid of any HTML tags inside an element if you set with it. 
+
+		1. Select the element
+			var someElement = document.getElementByID('someId');
+		2. Get text
+			someElement.textContent // returns the text inside the element. Does not include any HTML tags present!
+		3. Set text 
+			someElement.textContent = "whatever" // congrats, you made your web page apathetic.
+
+		To maintain the HTML structure when changing the text, use .innerHTML
+			=> This is similar to .textContent, but it keeps HTML tags and will return them if read. 
+			=> .innerHTML can be useful for setting HTML structure when operating with JS, but it's more common to simply read with it for conditional purposes
+
+	Manipulating attributes of a tag
+
+		getAttribute()
+			You can get the value of an elements attribute with <element that you selected>.getAttribute("<attribute name>"); 
+				someElement.getAttribute("href") // <the href of the attribute>
+
+		setAttribute()
+			You can also set an attribute of an element, this takes two arguments, the first of which is the attribute name, the second is the value
+			<element that you selected>.setAttribute("<attribute name>", "<value you want to set>"); 
+				someElement.setAttribute("src","href")
+			=> Note : when setting href or src, be sure to use http:// or https:// to let the browser know the link isn't relative to where you currently are.
