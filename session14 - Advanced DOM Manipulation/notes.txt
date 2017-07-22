@@ -1,0 +1,46 @@
+Advanced DOM Manipulation
+=========================
+
+Events
+------
+
+Events are everywhere, they control how interactive web page elements work and how they respond. They can be anything from click events to keypresses to dragging and dropping to pretty much anything.
+
+	Events work by selecting an element and attaching an event listener to that element.
+		Event listeners can tell when an event happens on a given element, and when that event is heard / triggered, the event listener can execute code.
+
+	.addEventListener()
+		This is used to add an event listener (duh) to an object. This is called ON an object, and takes two arguments. The first argument is the type of event we want to listen for, and the second argument is the code that we want to run when that event triggers.
+
+		ex: 
+			var button = document.querySelector("button#buttonWithId");
+			button.addEventListener('click', function(){
+				console.log("This button was clicked!");
+			});
+
+			*click* // "This button was clicked!"
+
+		=> More than one event listener can be on a single element, and since JS is synchronous, one will fire and then the other will fire upon completion of the first.
+
+		More complex example
+
+		(Assume there is a UL with 5 LIs inside of it)
+
+		var listOfLis = document.querySelectorAll('li');
+		for (var i = 0; i < listOfLis.length; i++){
+			listOfLis[i].addEventListener('click', function(){
+				this.style.color = "red"; // we use the 'this' keyword because the specific <li> is the object we are acting on
+			});
+		}
+
+			=> Here we get all the <li>s on the page and add an event listener to each for a click event, and when that event fires on a specific li, it will turn the color of the text red.
+
+			=> This is a simple way of doing it, however in future lessons there will be a better but slightly more complicated way of doing this
+
+		=> Of course you don't have to use an anonymous function, you can use a named function as well.
+
+		var displayText = function(){
+			alert(this.textContent);
+		};
+
+		someElement.addEventListener('click', displayText);
