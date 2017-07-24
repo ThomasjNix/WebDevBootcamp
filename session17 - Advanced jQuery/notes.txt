@@ -1,0 +1,82 @@
+Advanced jQuery
+---------------
+
+jQuery Events
+	
+	(These are the most common jQuery event methods)
+	All of these take a callback function
+
+	.click(<callback function>)
+		A method to add a click event listener to either a single element or a list of elements.
+		The callback is ran when the specified element is clicked. 
+
+	**************************************************************************
+	.keypress(<callback function>)
+		keypress is a method that adds a keypress event listener for a keyboard key press on a given element or list of elements. There are a few types:
+			.keydown - Fires immediately after key registers as being pressed, this returns a code for the key that was pressed
+			.keypress - Fire in between keydown and keyup (most of the time, not always). Unlike keydown and keyup, keypress indicates which CHARACTER was entered.
+			.keyup - Fires immediately as key is released, this returns a code for the key that was pressed
+
+			=> Keypress events have 3 types of codes relating to the key being pressed
+				ex: 13 is the keycode for enter
+
+				if (event.which === 13){
+					// Do some code relating to the enter key being pressed
+				}
+				
+
+			charCode
+			keyCode
+			which (used by jQuery officially, refers to the code of the key pressed. Every key has its own code.)
+
+			Ex: 
+				Shift+A 
+				keydown / keyup fire on shift and the letter a and returns codes for each
+				keypress fires and returns the character 'A' (uppercase A)
+
+	**************************************************************************
+	.on('what event to fire on',<callback function>)
+
+		very similar to the addEventListener, however it allows you to specify the type of the event to fire on. 
+		Adds the specified event listener to whatever element(s) provided
+
+			ex: .click() //  Only fires on click
+				.on('click', fn()); // Fires on click
+				.on('scroll', fn()); // Fires on mouse scroll
+				.on('mousedown' fn()); // Fires on mouse button down
+
+		So what's the difference between .click(fn()) and .on('click', fn()), for example?
+			.click() only adds event listeners for existing elements
+			.on will add listeners for all potential future elements
+
+
+	**************************************************************************
+	=> Important: 'this' isn't used in jQuery, instead it is replaced with $(this). 'this' won't point to where you think it will inside a jQuery function.
+
+
+	The event object
+		Each of these can take an event object inside their callback functions with information about the event.
+
+		For example: 
+
+		<some element>.click(function(event){
+			// do something with the event object
+		});
+
+		This is because each of these functions return the event object, so using it as an argument in the function gives information about the event
+
+
+jQuery effects
+--------------
+
+	Fade effects
+		.fadeOut() - animates an element from full opacity to 0 opacity / full transparency. A duration can be provided, and a callback can be provided to run at the end. 
+		.fadeIn() - does the same thing as fadeOut, but fades them in. Also takes a duration and callback function
+		.fadeToggle() - A duration and callback can be provided, fades in if they are already out (display: none), and fades out if they are already in.\
+
+	Sliding effects
+		.slideDown() - animates the height of an element down, setting the display to visible from the start
+		.slideDown() - animates the height of an element up, setting the display to none at the end
+		.slideToggle() - does exactly what you would think, slides up if down and down if up.
+
+		=> All of these can also be provided a duration and callback function
