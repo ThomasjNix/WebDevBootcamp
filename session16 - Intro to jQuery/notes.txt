@@ -1,0 +1,90 @@
+Intro to jQuery
+===============
+
+What is jQuery? 
+	jQuery is a JavaScript DOM Manipulation Library. It is the most popular JS tool / library, and it is very useful in concisely selecting and manipulating the DOM.
+
+Why use jQuery? Why not?
+	Reasons for:
+		jQuery was originally created to fix some issues with the DOM API. jQuery made it quicker and easier to use the DOM API.
+		It makes your code clearer in shorter in a lot of instances due to a lot of the actual functionality being handled by the jQuery library
+		Cross browser support means it can handle polyfilling to keep compatibility across browsers
+		Provides AJAX, useful for server calls
+		Large community with a lot of support
+
+	Reasons against: 
+		DOM API is no longer broken, so the original purpose is moot
+		jQuery doesn't do anything you can't do by yourself. Even if it makes it shorter and more concise, jQuery IS JS, and you can do it yourself. 
+		An unecessary dependancy. why require such a large package when it doesn't make anything possible that wasn't already? Besides if you only use it for a few pieces of functionality, there's 		probably smaller libraries out there that can do the same thing without all the extra weight
+		Performance. In some cases, a developer may not know that certain jQuery code is inefficient, causing performance drops
+		People are moving away from jQuery. There is still a lot of support, but people are moving to other libraries as well.
+
+	So is it worth it? It's worth knowing at least.
+
+Including jQuery
+----------------
+	jQuery needs to be included so it can be loaded into the page. You can either include a file via local href, or by including the jquery CDN (takes load of local server)
+
+Selecting Elements
+------------------
+
+	Select, manipulate. 
+
+	Selecting: jQuery selects elements with the $(<CSS Selector>) operator. 
+		ex: $('div'), $('#someId'), $("div, p, span, h1") // Last one returns multiple elements!
+
+		$("elem1 elem2") will select all elem2 nested inside of elem1
+
+	ManipulatingL the .css property is used to change CSS values with the syntax .css(property, value) using strings.
+
+		Ex: $('h1').css('color','red');
+
+		=> You can also use object syntax with a set of styles!
+
+			var h1Styles = {
+				color: red;
+				background-color: black;
+				font-size: 2em;
+				text-decoration: strikethrough;
+			};
+
+			$('h1').css(h1Styles);
+
+		=> You can even add styles to all elements of a list!
+
+			// Assuming you have a ul with a bunch of lis
+
+			$('li').css('color','purple');
+
+			Now all <li> on the page have purple text!
+
+	.last() returns the last element from a given selection that returns a list of elements, .first() returns the first
+
+Common jQuery Methods
+---------------------
+
+.val()
+	Helps to extract the value of an input. .val is a jQuery wrapper for .value
+		Not passing any arguments will return the value of any given element(s)
+		Passing an argument will set the value of any given element(s)
+.text()
+	Produces the text content of the element selected, just like .textContent
+	Passing in a value to .text() sets the value of textContent to that passed in value
+.attr()
+	Used to retrieve the value of an attribute for the first element in a set of matched elements or to set one of more attribute for every element matched
+		.attr('href'); // returns href of an element
+		.attr('href', '<some href>'); // now some element has <some href> as the value of the href attribute
+		.attr({
+			href: "<some href>",
+			alt: "<some alt>"
+		}); // now some element has both of these attribute values
+.html()
+	Similar to .innerHTML in the same way that .text() is similar to .textContent, is used in the same way (getting and setting)
+.addClass()
+	Adds specified class(es) to all elements in the set of matched elements
+.removeClass()
+	Removes specified class(es) to all elements in the set of matched Elements
+.toggleClass()
+	Works just like classList.toggle, either adds the class if the element(s) doesn't have it and removes the class if the element(s) do.
+
+=> These follow the getter and setter paradigm for the most part, where one functionality is used to retrieve a value and the other functionality is used to set a value.
