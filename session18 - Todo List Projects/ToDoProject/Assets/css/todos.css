@@ -1,0 +1,10 @@
+#container{
+	background: lightgrey;
+	width: 360px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+ul > li{
+	list-style: none;
+}

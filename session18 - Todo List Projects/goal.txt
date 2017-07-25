@@ -1,0 +1,32 @@
+This Todo list application is a combination of everything covered so far
+
+HTML - Appropriate structure
+CSS - Styling and responsivity
+jQuery / JS - Functionality; local CRUD operations and creating new elements / removing elements 
+
+
+What should be able to happen:
+
+Create new items and add to the list
+Delete items and have removed from the list
+Update items and have the changes applied to the list
+Hide the form to just see the list 
+Respond to resizing 
+Aesthetically pleasing
+
+New things in this session:
+
+jQuery:
+	.append and creating new elements
+	.parent
+	Creating elements 
+	Event delegation
+
+CSS:
+	font-awesome (icons)
+	box-shadow
+	transition
+	gradients
+
+
+Note: Since this session has an emphasis on file and folder structure, I will not be following the typical naming convention. The following session is a bonus project, and then comes the backend basics.	At that point, it appears that work will switch to cloud9 online IDE. More to come on that later.
