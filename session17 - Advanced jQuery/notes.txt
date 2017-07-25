@@ -50,6 +50,17 @@ jQuery Events
 			.on will add listeners for all potential future elements
 
 
+	=> UPDATE: .on will add event listeners for future elements, however it has to be written slightly differently. 
+
+		$('<PARENT ELEMENT>').on('<Event>', '<element you actually want the listener to fire on', function(){});
+
+			This is because event listeners can only be added to existing elements. Doing it this was with the additional argument however 
+			works as originally intended, as it actually adds teh event listener to the parent element and then jQuery will automatically
+			look for that second argument and apply the functionality to it. This is jQuery's way of working around the fact that event listeners 
+			can only be added to existing elements, and letting you add event listeners to future elements as well, so long as they are nested inside of 
+			the parent element selected prior to the .on method.
+
+
 	**************************************************************************
 	=> Important: 'this' isn't used in jQuery, instead it is replaced with $(this). 'this' won't point to where you think it will inside a jQuery function.
 
