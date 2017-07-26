@@ -21,3 +21,13 @@ The plan is to learn with this bootcamp for 2-3 hours per day, about twice the l
 <span>I look forward to this next section and submitting what I learn!</span>
 <br>
 <h3>Happy coding!</h3>
+
+
+<br>
+<h2><strong>Update:</strong></h2>
+<br>
+
+<p> I have at this point in time completed the front end portion of this course, and I have learned quite a bit, even about the things I was already pretty familiar with. From this point on, most work will be done in the <strong>Cloud9 Online IDE</strong> so that local code can be deployed to a local server. This could be done off my local machine, but to better align with the course, I will also be using Cloud9. This means that future commits will likely only be for notes, however if I find a way to save C9 files to my github easily and consistently, I will try to post those as well, as well as updating my README with how I intend on doing that. I look forward to continuing on learning about back end development!<p/>
+
+<br>
+<h3>Happy coding!</h3>
