@@ -1,0 +1,64 @@
+Backend Basics
+==============
+
+Review of the Internet
+	Visit url
+	URL Query is submitted by Internet Service Provider (ISP)
+		DNS within ISP converts query to IP
+	Request is sent to requested IP (with a lot of information attached)
+	Request finds fastest path to the designated IP
+	IP holder server receives request
+		Logic determines what needs to be sent back
+	Response is sent back to the place that a request was sent (Your IP)
+
+Static vs Dynamic Sites
+
+	There are two types of websites, static and dynamic
+
+	Dynamic pages are sites that are compiled on the server side and the response is constructed and sent by the server
+		Dynamic does not mean that the page is interactive, it means that it is sent via a server that processes back-end logic, and is not a local resource
+
+	Static pages are pages that have all the resources needed provided to the user without any server logic, every time the page loads the exact same information is sent. No databases are involved, no query logics or user logins, just HTML, CSS, and JS files sent back to every request.
+
+
+Stacks / Back end Tech
+
+	A generic 'stack'
+		A stack is all of the technology a web page uses to operate
+			Front end almost always includes HTML, CSS, and JS
+			Back end has things like the back end language, a server, and database
+
+	Back end - Determine what needs to be sent to the user, connect to database, sort information, build proper HTML page
+
+		-> send HTML, CSS, JS to user based on back end logic
+
+HTTP (Hyper Text Transfer Protocol)
+
+	HTTP Request is sent to the server, HTTP response is sent back.
+		There's many types of HTTP Requests (verbs), such as GET, POST, PUT, DELETE, COPY, HEAD, LINK, etc. 
+		Depending on the type of HTTP Request, the server can tell what our intention of the request is, and process logic based on it
+			ex: GET the data for the page, DELETE that record on my account, UPDATE my address on my profile listing, PUT this new info in my biography, etc.
+
+			=> This follows the Create, Read, Update, Destroy/Delete pattern for HTTP requests, known as CRUD
+
+		The query string is the URL with all the parameters attached that are sent to the server. If the server is expecting something in the query string and it is apparent,
+			then the server can do something with that information.
+
+	HTTP Response
+		Contains 3 parts: 
+
+			Body: The actual data that is sent back, such as the HTML, CSS, and JS. 
+			Headers: Metadata about the response, containing important info about the request, such as the content type, date and time of response, and server status code
+
+
+
+Backend Workflow
+----------------
+
+ Asked to not take notes since it will be covered later, so looking forward to that! 
+ 
+
+Cloud9
+------
+
+The server side coding for this course will be done in Cloud9 Online IDE. I've used C9 before for my university classes, so it will be the account linked to my github. I'm not entirely sure how I will be committing my changes to my github, but once I decide on that I will update my README for this course.
